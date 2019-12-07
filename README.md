@@ -11,7 +11,7 @@
 3、针对操作中可能出现的各种异常，做异常处理。
 4、基于输入/输出编程，支持学生、课程、教师等数据的读写操作。
 ## 三、实验过程
-学生登录界面，用JOptionPane.showMessageDialog(null, str1);实现一个窗口框，还运用了addActionListener点击事件、用if 、else判断密码是否正确，密码错误出现新的窗口：String str1 = "你输入的密码不正确，原因可能是：\n" +  "1、忘记密码；\n" + "2、未开启小键盘；\n" + "3、大小写未区分。";再用	new StudentFrame().show();跳转下一界面。学生登录成功后，弹出选课、退课、打印课程界面。
+学生登录界面，用JOptionPane.showMessageDialog(null, str1);实现一个窗口框，还运用了addActionListener点击事件、用if 、else判断密码是否正确，密码错误出现新的窗口：String str1 = "你输入的密码不正确，原因可能是：\n" +  "1、忘记密码；\n" + "2、未开启小键盘；\n" + "3、大小写未区分。";再用	new StudentFrame().show();跳转下一界面。学生登录成功后，弹出选课、退课、打印课程界面。把信息输出需要out.write(str);、 out.flush()；、 关闭输出流out.close();  
 this.setLayout(new BorderLayout());运用边界布局。用try...catch结构对异常进行捕获和处理，e.printStackTrace();存放异常。
 ```javascript
 //登录
@@ -19,7 +19,7 @@ public void MyEvent(){
 		login.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				String name="abc";
-				String word = "1234567890";	// 正确密码
+				String word = "123456";	// 正确密码
 				String str = new String(password.getPassword());
 				if(str.equals(word))
 					new Login().setVisible(true);
@@ -67,24 +67,93 @@ public void MyEvent(){
         panel.setBorder(new TitledBorder(null,"",TitledBorder.LEADING ,TitledBorder.TOP,null,null));
         contentPane.add(panel,BorderLayout.CENTER);          // 给panel添加边框
         }
-         // 给重填按钮设置事件处理代码
-        wy1.addActionListener(new ActionListener() {
-
-           
-            public void actionPerformed(ActionEvent e) {
-
-                tfName.setText("");
-                tfNum.setText("");
-                rb1.setSelected(true);
-                cb1.setSelected(false);
-                t1.setSelectedIndex(0);
-                cb2.setSelected(false);
-                t2.setSelectedIndex(0);
-                allInfo.setText("");
-            }
+	 JPanel panel_2=new JPanel();
+        panel.add(panel_2);
+        cb1=new JCheckBox("java");
+        panel_2.add(cb1);
+        t1=new JComboBox<String >();
+        t1.setModel(new DefaultComboBoxModel<String>(new String[]{"杨老师","赵老师","王老师"}));
+        panel_2.add(t1);
+	JPanel panel_5=new JPanel();
+        panel.add(panel_5);
+        JButton w1=new JButton("确定");
+        panel_5.add(w1);
+        JButton wy1=new JButton("重填");
+        panel_5.add(wy1);
+        JButton wyw1=new JButton("打印选课信息");
+        panel_5.add(wyw1);
+	//学生所选课程打印输出
+          wyw1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+       		
+        		ArrayList<Course> courseSelect = new ArrayList<Course>();
+        		
+        		Course java = new Course("java",t1.getSelectedItem().toString());
+        		Course c = new Course("C语言",t2.getSelectedItem().toString());
+        		Course math = new Course("高数",t3.getSelectedItem().toString());
+        		
+        		if(cb1.isSelected()){
+        			courseSelect.add(java);
+        		}
+        		if (cb2.isSelected()) {
+        			courseSelect.add(c);
+				}
+        		if (cb3.isSelected()) {
+        			courseSelect.add(math);
+				}
+        		
+                File f = new File("e:" + File.separator + "StuSC.txt");// 声明File 对象    
+                // 第2步：通过子类实例化父类对象    
+                Writer out = null;                 
+        // 准备好一个输出的对象    
+                try {
+				out = new FileWriter(f);
+			        // 通过对象多态性进行实例化    
+	                // 第3步：进行写操作    
+	                String str = "";  
+	             
+	                for (Course course : courseSelect) {
+						str+= course.getCourseName() + ":" + course.getSelected()+"\n";
+					}
+	        // 准备一个字符串    
+	                out.write(str);                    
+	        // 将内容输出    
+	                out.flush();          
+	                // 第4步：关闭输出流    
+	                 out.close();  
+				} catch (IOException e1) {
+					
+					e1.printStackTrace();
+				}            
+			}
         });
-    }
 
+```
+
+```javascript
+//course
+public class Course {
+	
+	private String courseName;
+	private String selected;
+	
+	public Course(String courseName, String selected){
+		this.courseName = courseName;
+		this.selected = selected;
+	}
+	
+	public String getCourseName() {
+		return courseName;
+	}
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
+	public String getSelected() {
+		return selected;
+	}
+	public void setSelected(String selected) {
+		this.selected = selected;
+	}
 ```
 ## 五、实验结果
 
