@@ -156,13 +156,20 @@ public class Course {
 	}
 ```
 ## 五、实验结果
-学生登录界面
-![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/1.png)
-学生密码错误登录失败提示
+* 学生登录界面
+
+* ![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/1.png)
+
+* 学生密码错误登录失败提示
+
 ![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/2.png)
+
 学生成功登录，进行选课
+
 ![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/3.png)
+
 选课成功，输出打印
+
 ![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/4.png)
 
 ## 六、实验感想
