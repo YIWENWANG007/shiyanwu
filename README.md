@@ -156,8 +156,14 @@ public class Course {
 	}
 ```
 ## 五、实验结果
+学生登录界面
 ![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/1.png)
-
+学生密码错误登录失败提示
+![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/2.png)
+学生成功登录，进行选课
+![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/3.png)
+选课成功，输出打印
+![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/4.png)
 
 ## 六、实验感想
 通过本次java编程实验,我有了一点自己的见解。在学生选课系统代码中，我加入了异常处理和信息输入输出。从最开始的有思绪，慢慢学习到最后的代码实现，遇到各种各样的问题， 所以只能一边学习一边做，要实现一个完美的选课管理系统还差很多，这还需要在以后的学习中慢慢积累开发经验。
