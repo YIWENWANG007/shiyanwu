@@ -156,11 +156,11 @@ public class Course {
 	}
 ```
 ## 五、实验结果
-* 学生登录界面
+  学生登录界面
 
-* ![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/1.png)
+  ![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/1.png)
 
-* 学生密码错误登录失败提示
+  学生密码错误登录失败提示
 
 ![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/2.png)
 
