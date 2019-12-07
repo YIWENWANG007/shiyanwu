@@ -13,6 +13,15 @@
 ## 三、实验过程
 学生登录界面，用JOptionPane.showMessageDialog(null, str1);实现一个窗口框，还运用了addActionListener点击事件、用if 、else判断密码是否正确，密码错误出现新的窗口：String str1 = "你输入的密码不正确，原因可能是：\n" +  "1、忘记密码；\n" + "2、未开启小键盘；\n" + "3、大小写未区分。";再用	new StudentFrame().show();跳转下一界面。学生登录成功后，弹出选课、退课、打印课程界面。把信息输出需要out.write(str);、 out.flush()；、 关闭输出流out.close();  
 this.setLayout(new BorderLayout());运用边界布局。用try...catch结构对异常进行捕获和处理，e.printStackTrace();存放异常。
+## 四、实验流程图
+ 学生登录流程图
+ 
+ ![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/6.png)
+ 
+  学生选课流程图
+  
+![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/5.png)
+## 五、核心代码及注释
 ```javascript
 //登录
 public void MyEvent(){
@@ -155,22 +164,22 @@ public class Course {
 		this.selected = selected;
 	}
 ```
-## 五、实验结果
+## 六、运行结果
   学生登录界面
 
   ![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/1.png)
 
   学生密码错误登录失败提示
 
-![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/2.png)
+ ![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/2.png)
 
-学生成功登录，进行选课
+ 学生成功登录，进行选课
 
-![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/3.png)
+ ![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/3.png)
 
-选课成功，输出打印
+ 选课成功，输出打印
 
-![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/4.png)
+ ![Image text](https://raw.githubusercontent.com/YIWENWANG007/shiyanwu/master/img/4.png)
 
-## 六、实验感想
-通过本次java编程实验,我有了一点自己的见解。在学生选课系统代码中，我加入了异常处理和信息输入输出。从最开始的有思绪，慢慢学习到最后的代码实现，遇到各种各样的问题， 所以只能一边学习一边做，要实现一个完美的选课管理系统还差很多，这还需要在以后的学习中慢慢积累开发经验。
+## 七、实验感想
+通过本次java编程实验,我有了一点自己的见解。在学生选课系统代码中，我加入了异常处理和信息输入输出。这次学会了输出流，从最开始的有思绪，慢慢学习到最后的代码实现，遇到各种各样的问题， 所以只能一边学习一边做，要实现一个完美的选课管理系统还差很多，这还需要在以后的学习中慢慢积累开发经验。
